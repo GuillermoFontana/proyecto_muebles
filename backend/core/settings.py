@@ -136,12 +136,12 @@ USE_I18N = True
 USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
-STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")  # carpeta donde Django recopila todo para deploy  # Para que collectstatic los mueva aquí
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')  # carpeta donde Django recopila todo para deploy  # Para que collectstatic los mueva aquí
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static') 
-] # Para que el servidor de desarrollo sirva los archivos estáticos aquí
-
+    os.path.join(BASE_DIR, '..', 'frontend', 'dist'),  # ruta real
+    os.path.join(BASE_DIR, '..', 'frontend', 'dist', 'assets'),  # opcional
+]
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')

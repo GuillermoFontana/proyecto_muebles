@@ -3,7 +3,7 @@ from django.urls import path, include, re_path
 from django.conf import settings
 from django.conf.urls.static import static
 from apps.views import lista_productos, api_productos, index
-
+from django.views.generic import TemplateView
 
 
 urlpatterns = [
@@ -12,5 +12,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include('apps.urls')),  # por ejemplo, si tus endpoints están en /api/
     # Fallback para cualquier otra ruta no capturada
-    re_path(r'^.*$', index),
+    re_path(r'^.*$', TemplateView.as_view(template_name='index.html')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

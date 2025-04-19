@@ -6,8 +6,10 @@ import path from 'path'
 export default defineConfig({
   plugins: [react()],
   root: './',
+  base: '/static/', // 🔥 esto es clave
   build: {
-    outDir: '../build',     // 🔥 Copia el build directamente a Django
+    outDir: '../backend/static', // ajustá si tu estructura es diferente
+    assetsDir: 'assets',
     emptyOutDir: true,
   },
   resolve: {
