@@ -1,14 +1,17 @@
 // frontend/vite.config.js
+// vite.config.js
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import path from 'path'
 
+const isProduction = process.env.NODE_ENV === 'production'
+
 export default defineConfig({
   plugins: [react()],
   root: './',
-  base: '/static/', // 🔥 esto es clave
+  base: isProduction ? '/static/' : '/', // ← clave
   build: {
-    outDir: '../backend/static', // ajustá si tu estructura es diferente
+    outDir: '../backend/static',
     assetsDir: 'assets',
     emptyOutDir: true,
   },

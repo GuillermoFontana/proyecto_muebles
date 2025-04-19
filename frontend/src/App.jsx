@@ -1,13 +1,14 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, Outlet } from 'react-router-dom'
+import Navbar from './components/Navbar.jsx'
+import Footer from './components/Footer.jsx'
 
 const App = () => (
-  <div>
-    <h1>Inicio</h1>
-    <nav>
-      <Link to="/productos">Productos</Link> | <Link to="/nosotros">Nosotros</Link> | <Link to="/contacto">Contacto</Link>
-    </nav>
-  </div>
+  <>
+    <Navbar />
+    <Outlet />
+    <Footer />
+  </>
 )
 
 export default App
