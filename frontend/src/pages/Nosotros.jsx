@@ -5,7 +5,7 @@ const Nosotros = () => (
   <div>
     <h1>Nosotros</h1>
     <p>Somos una empresa de muebles de alta gama...</p>
-    <Link to="/">Volver al inicio</Link>
+    <Link to="/">Inicio</Link>
   </div>
 )
 

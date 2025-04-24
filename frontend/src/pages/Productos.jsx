@@ -23,7 +23,7 @@ const Productos = () => {
           <li key={prod.id}>{prod.nombre}</li>
         ))}
       </ul>
-      <Link to="/">Volver al inicio</Link>
+      <Link to="/">Inicio</Link>
     </div>
   );
 };
